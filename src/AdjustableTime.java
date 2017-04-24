@@ -6,8 +6,8 @@
  *         Angelica L Jimenez Monar angelical.jimenez@estudiante.uam.es
  *
  */
-public interface PropertyObserver<V> {
+public interface AdjustableTime extends ObservableProperty<Integer>{
 	
-	void propertyChanged(ObservableProperty<V> property, V oldValue);
+	void incrementTime(int inc);
 
 }

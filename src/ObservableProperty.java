@@ -1,3 +1,11 @@
+/**
+ * 
+ * 
+ * 
+ * @author Miguel Angel Marroyo Bouzada miguel.marroyo@estudiante.uam.es
+ *         Angelica L Jimenez Monar angelical.jimenez@estudiante.uam.es
+ *
+ */
 public interface ObservableProperty<V> {
 	
 	V getValue();
