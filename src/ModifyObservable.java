@@ -12,8 +12,7 @@ public class ModifyObservable extends DefaultObservableProperty<Integer> impleme
 	private PropertyObserver<Integer> observer;
 	
 	public ModifyObservable(){
-		
-		super(0);
+	
 		
 	}
 	
