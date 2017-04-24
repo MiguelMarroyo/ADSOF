@@ -7,7 +7,7 @@
  *
  */
 public abstract class DefaultObservableProperty<V> implements ObservableProperty<V>{
-
+		
 	protected boolean setValue(V newValue) {
 		return false;
 	}

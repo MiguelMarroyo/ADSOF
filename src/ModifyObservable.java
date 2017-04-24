@@ -9,11 +9,13 @@
 public class ModifyObservable extends DefaultObservableProperty<Integer> implements AdjustableTime{
 
 	private Integer value;
-	
 	private PropertyObserver<Integer> observer;
 	
-	
-	
+	public ModifyObservable(){
+		
+		super(0);
+		
+	}
 	
 	@Override
 	public Integer getValue() {
