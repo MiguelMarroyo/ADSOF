@@ -8,21 +8,29 @@
  */
 public class ModifyObservable extends DefaultObservableProperty<Integer> implements AdjustableTime{
 
+	private Integer value;
+	
+	private PropertyObserver<Integer> observer;
+	
+	
+	
+	
 	@Override
 	public Integer getValue() {
-		// TODO Auto-generated method stub
-		return null;
+		return value;
 	}
 
 	@Override
 	public void addObserver(PropertyObserver<Integer> o) {
-		// TODO Auto-generated method stub
+		observer = o;
+		return;
 		
 	}
 
 	@Override
 	public void removeObserver(PropertyObserver<Integer> o) {
-		// TODO Auto-generated method stub
+		observer = null;
+		return;
 		
 	}
 
