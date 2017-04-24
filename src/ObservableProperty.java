@@ -5,5 +5,6 @@ public interface ObservableProperty<V> {
 	void addObserver(PropertyObserver<V> o);
 	
 	void removeObserver(PropertyObserver<V> o);
+	///dsfdsf
 	
 }
