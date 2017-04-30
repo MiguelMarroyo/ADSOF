@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  * Implementa ObservableProperty
@@ -7,9 +9,61 @@
  *
  */
 public abstract class DefaultObservableProperty<V> implements ObservableProperty<V>{
+	
+	private V valor;
+	
+	private ArrayList<PropertyObserver<V>> observadores = new ArrayList<PropertyObserver<V>>();
+	
+	
+	
+	/**
+	 * Obtiene el valor
+	 * @return valor
+	 */
+	public V getValue(){
+		return valor;
 		
+	}
+	
+	/**
+	 * Anade un observador
+	 */
+	public void addObserver(PropertyObserver<V> o) {
+		
+		observadores.add(o);
+		return;
+
+	}
+	
+	/**
+	 * Elimina un observador
+	 */
+	public void removeObserver(PropertyObserver<V> o){
+		
+		observadores.remove(o);
+		return;
+		
+	}
+	
+	
+	/**
+	 * Cambia el valor
+	 * @param newValue Nuevo valor
+	 * @return true si ha cambiado el valor, false en caso contrario
+	 */
 	protected boolean setValue(V newValue) {
-		return false;
+		
+		
+		// Si el valor no ha cambiado, false
+		if (newValue == valor){
+			return false;
+		}
+		
+		// Si el valor ha cambiado, true
+		valor = newValue;
+		return true;
+		
+		
 	}
 	
 }

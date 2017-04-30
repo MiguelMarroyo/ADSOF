@@ -10,7 +10,13 @@ public class TesterP1 {
 
 	public static void main(String[] args){
 		
+		// Crear observers
 		
+		// Anadir observers
+		
+		// Cambiar value
+		
+		// Comprobar que los observers conocen el cambio de value
 		
 		
 		
