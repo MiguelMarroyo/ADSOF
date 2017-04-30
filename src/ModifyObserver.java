@@ -6,10 +6,10 @@
  *         Angelica L Jimenez Monar angelical.jimenez@estudiante.uam.es
  *
  */
-public class Observer extends DefaultObservableProperty<Integer> implements AdjustableTime{
+public class ModifyObserver extends DefaultObservableProperty<Integer> implements AdjustableTime{
 
 	
-	public Observer(){
+	public ModifyObserver(){
 	
 		
 	}
@@ -19,6 +19,9 @@ public class Observer extends DefaultObservableProperty<Integer> implements Adju
 	@Override
 	public void incrementTime(int inc) throws IllegalArgumentException{
 		
+		// Al anadir se suma valor
+		
+		// Al eliminar se resta valor
 		
 	}
 
