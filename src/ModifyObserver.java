@@ -22,14 +22,21 @@ public class ModifyObserver extends DefaultObservableProperty<Integer> implement
 	@Override
 	public void incrementTime(int inc) throws IllegalArgumentException{
 		
-		// Al anadir se suma valor
+		int valueaux = 0;
 		
-		// Al eliminar se resta valor
+		valueaux = getValue(); // Cogemos el valor inicial y le sumamos el inc
+		
+		valueaux += inc;
+		
+		this.setValue(valueaux);
+		
 		if(getValue() < 0){
 			
 			throw new IllegalArgumentException("Valor menor que cero");
 			
 		}
+		
+		return;
 		
 	}
 
