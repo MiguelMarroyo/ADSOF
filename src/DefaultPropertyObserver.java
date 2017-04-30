@@ -6,11 +6,13 @@
  *         Angelica L Jimenez Monar angelical.jimenez@estudiante.uam.es
  *
  */
-public class DefaultPropertyObserver implements PropertyObserver{
+public class DefaultPropertyObserver implements PropertyObserver<Integer>{
 
 	@Override
-	public void propertyChanged(ObservableProperty property, Object oldValue) {
-		// TODO Auto-generated method stub
+	public void propertyChanged(ObservableProperty<Integer> property, Integer oldValue) {
+					
+		System.out.println("El tiempo viejo es: " + oldValue + " y el tiempo nuevo es: " + property.getValue());
+
 		
 	}
 
