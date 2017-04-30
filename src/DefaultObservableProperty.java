@@ -67,8 +67,14 @@ public abstract class DefaultObservableProperty<V> implements ObservableProperty
 			return false;
 		}
 		
-		// Si el valor ha cambiado, true
+		// Si el valor ha cambiado, notificamos a los observadores
+		for (PropertyObserver<V> obs : observadores) {
+            obs.propertyChanged(this, valor);
+        }
+		
+		// Cambiamos el valor al nuevo valor
 		valor = newValue;
+		
 		return true;
 		
 		
