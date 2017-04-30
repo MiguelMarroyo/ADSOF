@@ -21,11 +21,15 @@ public class TesterP1 {
 		observado.addObserver(obs2);
 		
 		// Cambiar value
-		observado.incrementTime(2);
+		observado.incrementTime(-1); // Valor = 1
 		
-		// Comprobar que los observers conocen el cambio de value
+		observado.incrementTime(9); // Valor = 10 
 		
+		observado.incrementTime(-10); // Valor = 0
 		
+		observado.incrementTime(-1); // Exception ya que el valor es negativo
+		
+		return;
 		
 	}
 	
