@@ -8,20 +8,28 @@
  */
 public class ModifyObserver extends DefaultObservableProperty<Integer> implements AdjustableTime{
 
-	
-	public ModifyObserver(){
-	
+	/**
+	 * Constructor de la clase ModifyObserver
+	 * @param valor Valor inicial
+	 */
+	public ModifyObserver(int valor){
+		
+		super(valor);
 		
 	}
 	
 	
-
 	@Override
 	public void incrementTime(int inc) throws IllegalArgumentException{
 		
 		// Al anadir se suma valor
 		
 		// Al eliminar se resta valor
+		if(getValue() < 0){
+			
+			throw new IllegalArgumentException("Valor menor que cero");
+			
+		}
 		
 	}
 

@@ -11,10 +11,18 @@ import java.util.ArrayList;
 public abstract class DefaultObservableProperty<V> implements ObservableProperty<V>{
 	
 	private V valor;
-	
 	private ArrayList<PropertyObserver<V>> observadores = new ArrayList<PropertyObserver<V>>();
 	
-	
+	/**
+	 * Constructor de la clase DefaultObservablProperty
+	 * @param value Valor inicial
+	 */
+	public DefaultObservableProperty(V value){
+		
+		this.valor = value;
+		
+		
+	}
 	
 	/**
 	 * Obtiene el valor
