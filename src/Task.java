@@ -17,6 +17,9 @@ public class Task implements ITask{
     private Set<Task> subtareas = new HashSet<Task>();
     
     private Task padre;
+    
+    private AdjustableTime estimado;
+    private AdjustableTime dedicado;
      
     /**
      * Constructor de la clase Task
@@ -26,6 +29,8 @@ public class Task implements ITask{
         
     	this.nombre = nom;
     	this.padre = null;
+    	this.estimado = null;
+    	this.dedicado= null;
          
     }
 
@@ -75,11 +80,29 @@ public class Task implements ITask{
 	@Override
 	public boolean containsTask(Task t) {
 		
+		// Comprobar si la tarea esta incluida directamente
+		for (Task o : subtareas) {
+            
+    		if (o.getName().equals(t.getName())){
+            	return true;
+            }
+        }
+    	
+		// Comprobar si la tarea esta incluida indirectamente
+		for (Task o : subtareas) {
+            
+			for (Task b: o.getTasks()){
+
+				if(b.getName().equals(t.getName())){
+					return true;
+				}
+				
+			}
+
+        }
 		
-		
-		
-		
-		return true;
+		// Si no esta directa o indirectamente, false
+		return false;
 		
 	}
 
