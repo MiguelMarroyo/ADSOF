@@ -10,7 +10,7 @@ import java.util.Set;
  *         Angelica L Jimenez Monar angelical.jimenez@estudiante.uam.es
  *
  */
-public class Task implements ITask{
+public class Task{
      
     private String nombre;
      
@@ -23,7 +23,7 @@ public class Task implements ITask{
      
     /**
      * Constructor de la clase Task
-     * @param nom
+     * @param nom Nombre de la tarea
      */
     public Task(String nom){
         
@@ -34,12 +34,19 @@ public class Task implements ITask{
          
     }
 
-	@Override
+	/**
+	 * Obtiene el nombre de la subtarea
+	 * @return nombre
+	 */
 	public String getName() {
 		return nombre;
 	}
 
-	@Override
+	/**
+	 * Anade una subtarea
+	 * @param t Subtarea a anadir
+	 * @return true si se anade correctamente, false en caso contrario
+	 */
 	public boolean addTask(Task t) {
 		
 		if (t.getParent() != null){
@@ -57,7 +64,11 @@ public class Task implements ITask{
 		
 	}
 
-	@Override
+	/**
+	 * Elimina una subtarea
+	 * @param t Tarea a eliminar
+	 * @return true si se elimina correctamente, false en caso contrario
+	 */
 	public boolean removeTask(Task t) {
 		
 		t.setParent(null);
@@ -65,12 +76,19 @@ public class Task implements ITask{
 		return subtareas.remove(t);
 	}
 
-	@Override
+	/**
+	 * Obtiene la lista de subtareas
+	 * @return subtareas
+	 */
 	public Set<Task> getTasks() {
 		return Collections.unmodifiableSet(subtareas);
 	}
 
-	@Override
+	/**
+	 * Comprueba si ya esta contenida la tarea
+	 * @param t Tarea a comprobar
+	 * @return true si esta contenida, false en caso contrario
+	 */
 	public boolean containsTask(Task t) {
 		
 		// Comprobar si la tarea esta incluida directamente
@@ -99,12 +117,18 @@ public class Task implements ITask{
 		
 	}
 
-	@Override
+	/**
+	 * Obtiene la tarea padre
+	 * @return padre
+	 */
 	public Task getParent() {
 		return padre;
 	}
 
-	@Override
+	/**
+	 * Cambia la tarea padre la la tarea invocadora
+	 * @param parent Nuevo padre
+	 */
 	public void setParent(Task parent) {
 		
 		// Si el padre esta contenido en la tarea, exception
@@ -118,13 +142,19 @@ public class Task implements ITask{
 		return;
 		
 	}
-
-	@Override
+	
+	/**
+	 * Obtiene el tiempo restante estimado de la tarea
+	 * @return estimado
+	 */
 	public AdjustableTime getEstimated() {
 		return estimado;
 	}
 
-	@Override
+	/**
+	 * Obtiene el tiempo dedicado a la tarea
+	 * @return dedicado
+	 */
 	public AdjustableTime getDedicated() {
 		return dedicado;
 	}

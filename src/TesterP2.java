@@ -38,6 +38,10 @@ public class TesterP2 {
 			System.out.println(e);
 		}
 		
+		DefaultPropertyObserver obs1 = new DefaultPropertyObserver();
+		
+		tareas.buscarTarea("tarea").getEstimated().addObserver(obs1);;
+		tareas.buscarTarea("tarea").getEstimated().incrementTime(5);
 		
 		
 		return;
