@@ -39,8 +39,6 @@ public class Task implements ITask{
 		return nombre;
 	}
 
-
-
 	@Override
 	public boolean addTask(Task t) {
 		
@@ -59,7 +57,6 @@ public class Task implements ITask{
 		
 	}
 
-
 	@Override
 	public boolean removeTask(Task t) {
 		
@@ -68,14 +65,10 @@ public class Task implements ITask{
 		return subtareas.remove(t);
 	}
 
-
-
 	@Override
 	public Set<Task> getTasks() {
 		return Collections.unmodifiableSet(subtareas);
 	}
-
-
 
 	@Override
 	public boolean containsTask(Task t) {
@@ -106,14 +99,10 @@ public class Task implements ITask{
 		
 	}
 
-
-
 	@Override
 	public Task getParent() {
 		return padre;
 	}
-
-
 
 	@Override
 	public void setParent(Task parent) {
@@ -134,18 +123,14 @@ public class Task implements ITask{
 		
 	}
 
-
-
 	@Override
 	public AdjustableTime getEstimated() {
-		return null;
+		return estimado;
 	}
-
-
 
 	@Override
 	public AdjustableTime getDedicated() {
-		return null;
+		return dedicado;
 	}
     
    

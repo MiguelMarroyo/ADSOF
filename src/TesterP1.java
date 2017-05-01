@@ -27,7 +27,11 @@ public class TesterP1 {
 		
 		observado.incrementTime(-10); // Valor = 0
 		
-		observado.incrementTime(-1); // Exception ya que el valor es negativo
+		try{
+			observado.incrementTime(-1); // Exception ya que el valor es negativo
+		}catch (IllegalArgumentException e) {
+			System.out.println(e);
+		}
 		
 		return;
 		
