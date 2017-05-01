@@ -163,7 +163,7 @@ public class Task{
 	 * @return estimado
 	 */
 	public AdjustableTime getEstimated() {
-		return estimado;
+ 		return estimado;
 	}
 
 	/**
@@ -174,6 +174,50 @@ public class Task{
 		return dedicado;
 	}
     
-   
- 
+	/**
+	 * Permite cambiar el tiempo estimado
+	 * @param value Valor de tiempo
+	 */
+	public void cambiarEstimado(int value){
+		
+		this.estimado.incrementTime(value);
+		
+		if(padre != null){
+			
+			padre.getEstimated().incrementTime(value);
+			
+			if(padre.getParent() != null){
+				padre.getParent().cambiarEstimado(value);
+			}
+
+		}
+		
+		return;
+		
+	}
+	
+	/**
+	 * Permite cambiar el tiempo dedicado
+	 * @param value Valor de tiempo
+	 */
+	public void cambiarDedicado(int value){
+		
+		this.dedicado.incrementTime(value);
+		
+		if(padre != null){
+			
+			padre.getDedicated().incrementTime(value);
+			
+			if(padre.getParent() != null){
+				padre.getParent().cambiarDedicado(value);
+			}
+
+		}
+		
+		return;
+		
+		
+	}
+	
+
 }

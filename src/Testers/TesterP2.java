@@ -17,7 +17,7 @@ public class TesterP2 {
 		// Crear tasks
 		Tasks tareas = new Tasks();
 		
-		// Crear tarea
+		// Crear tarea -> Estimado = 10; Dedicado = 2
 		tareas.newTask("tarea");
 		
 		try{
@@ -28,7 +28,7 @@ public class TesterP2 {
 			System.out.println(e);
 		}
 		
-		// Anadir subtarea a la ya creada -> El tiempo de "tarea" se debe ver modificado
+		// Anadir subtarea a la ya creada -> El tiempo de "tarea" se debe ver modificado: Estimado = 20; Dedicado = 4
 		tareas.newTask("subtarea");
 		
 		Task subtarea = tareas.buscarTarea("subtarea");
@@ -41,6 +41,8 @@ public class TesterP2 {
 		}catch (IllegalArgumentException e) {
 			System.out.println(e);
 		}
+		
+		subtarea.cambiarEstimado(2); // Estimado de tarea = 22
 		
 		// Eliminamos la subtarea -> El tiempo de "tarea" se debe ver modificado
 		tareas.buscarTarea("tarea").removeTask(subtarea);
