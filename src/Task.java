@@ -113,10 +113,6 @@ public class Task implements ITask{
 			throw new IllegalArgumentException("La tarea " + parent.getName() + " esta contenida dentro de " + this.getName());
 		}
 		
-		this.getParent().removeTask(this);
-		
-		parent.addTask(this);
-		
 		this.padre = parent;
 		
 		return;

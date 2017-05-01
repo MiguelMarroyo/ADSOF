@@ -29,9 +29,8 @@ public class Tasks {
      * @return nuevaTarea
      */
     public Task newTask(String taskName) throws IllegalArgumentException{
-        
-    	
-    	if (buscarTarea(taskName)){
+
+    	if (buscarTarea(taskName) != null){
     		throw new IllegalArgumentException("Tarea " + taskName + " ya existente");
     	}
     	
@@ -46,18 +45,18 @@ public class Tasks {
     /**
      * Busca una tarea por nombre
      * @param tarea Nombre de la tarea
-     * @return true si esta, false en caso contrario
+     * @return la tarea si esta, null en caso contrario
      */
-    public boolean buscarTarea(String tarea){
+    public Task buscarTarea(String tarea){
         
     	for (Task o : tareas) {
             
     		if (o.getName().equalsIgnoreCase(tarea)){
-            	return true;
+            	return o;
             }
         }
     	
-    	return false;
+    	return null;
          
     }
      
