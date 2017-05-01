@@ -1,5 +1,4 @@
 package Testers;
-import Codigo.DefaultPropertyObserver;
 import Codigo.Task;
 import Codigo.Tasks;
 
@@ -29,7 +28,7 @@ public class TesterP2 {
 			System.out.println(e);
 		}
 		
-		// Anadir subtarea a la ya creada
+		// Anadir subtarea a la ya creada -> El tiempo de "tarea" se debe ver modificado
 		tareas.newTask("subtarea");
 		
 		Task subtarea = tareas.buscarTarea("subtarea");
@@ -43,10 +42,8 @@ public class TesterP2 {
 			System.out.println(e);
 		}
 		
-		DefaultPropertyObserver obs1 = new DefaultPropertyObserver();
-		
-		tareas.buscarTarea("tarea").getEstimated().addObserver(obs1);;
-		tareas.buscarTarea("tarea").getEstimated().incrementTime(5);
+		// Eliminamos la subtarea -> El tiempo de "tarea" se debe ver modificado
+		tareas.buscarTarea("tarea").removeTask(subtarea);
 		
 		
 		return;

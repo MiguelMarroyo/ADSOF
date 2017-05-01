@@ -22,6 +22,9 @@ public class Task{
     private AdjustableTime estimado;
     private AdjustableTime dedicado;
      
+    DefaultPropertyObserver obsEstimado = new DefaultPropertyObserver();
+    DefaultPropertyObserver obsDedicado = new DefaultPropertyObserver();
+    
     /**
      * Constructor de la clase Task
      * @param nom Nombre de la tarea
@@ -30,9 +33,11 @@ public class Task{
         
     	this.nombre = nom;
     	this.padre = null;
-    	this.estimado = null;
-    	this.dedicado= null;
-         
+    	this.estimado = new ModifyObserver(10);
+    	this.dedicado= new ModifyObserver(2);
+    	
+    	estimado.addObserver(obsEstimado);
+    	dedicado.addObserver(obsDedicado);
     }
 
 	/**
@@ -61,6 +66,11 @@ public class Task{
 		
 		t.setParent(this);
 		
+		// Cambiamos los tiempos de la tarea contenedora
+		this.estimado.incrementTime(t.getEstimated().getValue());
+		
+		this.dedicado.incrementTime(t.getDedicated().getValue());
+		
 		return subtareas.add(t);
 		
 	}
@@ -73,6 +83,10 @@ public class Task{
 	public boolean removeTask(Task t) {
 		
 		t.setParent(null);
+		
+		this.estimado.incrementTime(-(t.getEstimated().getValue()));
+		
+		this.dedicado.incrementTime(-(t.getDedicated().getValue()));
 		
 		return subtareas.remove(t);
 	}
