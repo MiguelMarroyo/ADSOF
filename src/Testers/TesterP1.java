@@ -1,3 +1,7 @@
+package Testers;
+import Codigo.DefaultPropertyObserver;
+import Codigo.ModifyObserver;
+
 /**
  * 
  * Prueba la funcionalidad del apartado 1

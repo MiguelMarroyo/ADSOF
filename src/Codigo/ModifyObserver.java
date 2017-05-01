@@ -1,3 +1,4 @@
+package Codigo;
 /**
  * 
  * Permite añadir o eliminar propiedades observables. Hereda de DefaultObservableProperty

@@ -1,3 +1,8 @@
+package Testers;
+import Codigo.DefaultPropertyObserver;
+import Codigo.Task;
+import Codigo.Tasks;
+
 /**
  * 
  * Prueba la funcionalidad del apartado 2

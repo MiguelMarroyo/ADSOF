@@ -1,3 +1,4 @@
+package Codigo;
 /**
  * 
  * Extiende la interfaz ObservableProperty
