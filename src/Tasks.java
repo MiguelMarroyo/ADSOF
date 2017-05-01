@@ -32,8 +32,7 @@ public class Tasks {
         
     	
     	if (buscarTarea(taskName)){
-    		
-    		throw new IllegalArgumentException("Tarea ya existente");
+    		throw new IllegalArgumentException("Tarea " + taskName + " ya existente");
     	}
     	
     	Task nuevaTarea = new Task(taskName);
