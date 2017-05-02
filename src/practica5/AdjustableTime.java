@@ -1,4 +1,4 @@
-package Codigo;
+package practica5;
 /**
  * 
  * Extiende la interfaz ObservableProperty

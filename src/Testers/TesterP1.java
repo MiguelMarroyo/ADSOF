@@ -1,6 +1,6 @@
 package Testers;
-import Codigo.DefaultPropertyObserver;
-import Codigo.ModifyObserver;
+import practica5.DefaultPropertyObserver;
+import practica5.ModifyObserver;
 
 /**
  * 

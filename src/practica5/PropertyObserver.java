@@ -1,4 +1,4 @@
-package Codigo;
+package practica5;
 /**
  * 
  * Interfaz PropertyObserver

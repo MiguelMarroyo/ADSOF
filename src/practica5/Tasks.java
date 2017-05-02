@@ -1,4 +1,4 @@
-package Codigo;
+package practica5;
 import java.util.HashSet;
  
 /**
