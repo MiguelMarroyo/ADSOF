@@ -1,5 +1,7 @@
 package practica5;
 
+import java.util.ArrayList;
+
 /**
  * 
  * Define la consola de comandos
@@ -8,12 +10,15 @@ package practica5;
  *         Angelica L Jimenez Monar angelical.jimenez@estudiante.uam.es
  *
  */
-public class TextConsole {
+public class TextConsole{
 	
-	@FunctionalInterface
-	public interface Function {
-	void execute(String ...args) throws IllegalArgumentException;
+	
+	private ArrayList<Function> commands;
+	
+	public TextConsole(){
+		this.commands = new ArrayList<Function>();
 	}
+	
 	
 	/**
 	 * Bucle de la consola
@@ -31,8 +36,8 @@ public class TextConsole {
 	
 	/**
 	 * Anade comandos a la consola
-	 * @param name
-	 * @param op
+	 * @param name Nombre del comando
+	 * @param op Funcion que realiza
 	 */
 	public void addCommands(String name, Function op){
 		
