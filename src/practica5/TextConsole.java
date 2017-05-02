@@ -1,5 +1,6 @@
 package practica5;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -45,8 +46,21 @@ public class TextConsole{
 			
 			Function func = commands.get(comandos[0]);
 			
-			func.execute(comandos[1]);
-			
+			if (func == null){
+				
+				System.out.println("Comandos disponibles:");
+				
+				ArrayList<String> lista = new ArrayList<String>(commands.keySet());
+				
+				for (String nombre : lista){
+					
+					System.out.println(nombre);
+					
+				}
+				
+			}else
+				func.execute(comandos[1]);
+							
 		}
 		
 		
