@@ -25,16 +25,11 @@ public class TesterP3 {
 		consola.addCommands("Hola", fun1);
 		consola.addCommands("Saludos", fun2);
 				
-		consola.run();
+		consola.run(); // Ejecucion de la consola
 		
-		System.out.println("Fin");
-		
-		
-		// Ejecucion de la consola
+		System.out.println("Fin del tester");
 		
 	}
-	
-	
 	
 	
 }
