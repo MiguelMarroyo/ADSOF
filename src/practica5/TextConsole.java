@@ -28,24 +28,24 @@ public class TextConsole{
 	@SuppressWarnings("resource")
 	public void run(){
 		
+		Scanner scanner = new Scanner(System.in);
+		
 		while(true){
+
+			System.out.println("Introduzca el nombre del comando y sus argumentos");
 			
-			Scanner scanner = new Scanner(System.in);
+			String comando = scanner.nextLine();
 			
-			String nombre = scanner.nextLine();
+			String[] comandos = comando.split(" ");
 			
 			// Si se introduce un enter: return (fin)
-			if(nombre.isEmpty()){
+			if(comando.isEmpty()){
 				return;
 			}
 			
-			Function func = commands.get(nombre);
+			Function func = commands.get(comandos[0]);
 			
-			String args = scanner.next();
-			
-			func.execute(args);
-			
-			
+			func.execute(comandos[1]);
 			
 		}
 		

@@ -17,19 +17,15 @@ public class TesterP3 {
 	public static void main(String[] args){
 		
 		TextConsole consola = new TextConsole();
-	
-		String hola = "Saludos profesor";
 		
+		// Creacion de nuevos comandos
 		Function fun1 = (h)-> System.out.println(h);
+		Function fun2 = (h) -> System.out.println("Saludos" + h);
 		
 		consola.addCommands("Hola", fun1);
-		
+		consola.addCommands("Saludos", fun2);
+				
 		consola.run();
-		
-		
-		fun1.execute(hola);
-
-		// Creacion de nuevos comandos
 		
 		System.out.println("Fin");
 		
