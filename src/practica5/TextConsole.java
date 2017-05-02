@@ -2,6 +2,7 @@ package practica5;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * 
@@ -24,9 +25,25 @@ public class TextConsole{
 	/**
 	 * Bucle de la consola
 	 */
+	@SuppressWarnings("resource")
 	public void run(){
 		
 		while(true){
+			
+			Scanner scanner = new Scanner(System.in);
+			
+			String nombre = scanner.nextLine();
+			
+			// Si se introduce un enter: return (fin)
+			if(nombre.isEmpty()){
+				return;
+			}
+			
+			Function func = commands.get(nombre);
+			
+			String args = scanner.next();
+			
+			func.execute(args);
 			
 			
 			
@@ -43,7 +60,7 @@ public class TextConsole{
 	public void addCommands(String name, Function op){
 		
 		commands.put(name, op);
-		
+		return;
 		
 	}
 	
