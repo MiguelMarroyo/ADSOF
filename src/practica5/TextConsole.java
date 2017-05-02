@@ -1,6 +1,7 @@
 package practica5;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 
@@ -13,10 +14,10 @@ import java.util.ArrayList;
 public class TextConsole{
 	
 	
-	private ArrayList<Function> commands;
+	private Map<String, Function> commands;
 	
 	public TextConsole(){
-		this.commands = new ArrayList<Function>();
+		this.commands = new HashMap<String, Function>();
 	}
 	
 	
@@ -41,7 +42,7 @@ public class TextConsole{
 	 */
 	public void addCommands(String name, Function op){
 		
-		
+		commands.put(name, op);
 		
 		
 	}
