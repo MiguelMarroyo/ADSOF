@@ -46,7 +46,12 @@ public class TextConsole{
 		Function fun4 = (h) -> this.spend(h[0]);
 		Function fun5 = (h) -> this.parent(this.tareasTotales.buscarTarea(h[0]));
 		Function fun6 = (h) -> this.list();
-		Function fun7 = (h) -> this.status(h[0]);
+		Function fun7 = (h) -> {
+			if (h.length == 0){
+				this.status(null);
+			}else
+				this.status(h[0]);
+		};
 		
 		// Anadir funciones
 		this.addCommands("start", fun1);
@@ -139,7 +144,7 @@ public class TextConsole{
 		
 		if(tareaActual != null){
 			
-			stop(); // Si ya existe una tarea previa, stop
+			this.stop(); // Si ya existe una tarea previa, stop
 			
 		}
 		
