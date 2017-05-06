@@ -38,10 +38,17 @@ public class TextConsole{
 		
 		// Creacion de lambdas
 		Function fun1 = (h) -> this.start(h[0]);
-		
+		Function fun2 = (h) -> this.stop();
+		Function fun3 = (h) -> this.addEstimate(h[0]);
+		Function fun4 = (h) -> this.spend(h[0]);
+		Function fun5 = (h) -> this.parent(this.tareasTotales.buscarTarea(h[0]));
 		
 		// Anadir lambdas
 		this.addCommands("start", fun1);
+		this.addCommands("stop", fun2);
+		this.addCommands("addEstimate", fun3);
+		this.addCommands("spend", fun4);
+		this.addCommands("parent", fun5);
 		
 	}
 	
@@ -129,15 +136,68 @@ public class TextConsole{
 		
 	}
 	
-	
+	/**
+	 * Detiene la tarea actual anadiendo el tiempo dedicado transcurrido desde el inicio
+	 */
 	private void stop(){
 		
+		endDate = new Date();
 		
+		segundos = (int)((endDate.getTime() - startDate.getTime()) / 1000); // Calculamos los segundos transcurridos
+		
+		tareaActual.cambiarDedicado(segundos); // cambiar el tiempo dedicado
+		
+		tareaActual = null; // eliminamos la tarea
+		
+		return;
 		
 		
 	}
 	
+	/**
+	 * Anade/resta tiempo estimado a la tarea actual
+	 * @param minutos Minutos a anadir/restar
+	 */
+	private void addEstimate (String minutos){
+		
+		int tiempo = Integer.parseInt(minutos);
+		
+		tareaActual.cambiarEstimado(tiempo);
+		
+		return;
+		
+	}
 	
+	/**
+	 * Anade/resta tiempo dedicado a la tarea actual
+	 * @param minutos Minutos a anadir/restar
+	 */
+	private void spend (String minutos){
+		
+		int tiempo = Integer.parseInt(minutos);
+		
+		tareaActual.cambiarDedicado(tiempo);
+		
+		return;
+	}
 	
+	/**
+	 * Cambia la tarea padre de la tarea actual
+	 * @param parentTask Nueva tarea padre
+	 */
+	private void parent (Task parentTask){
+		
+		if (parentTask == null){
+			
+			tareaActual.setParent(null);
+			return;
+			
+		}
+		
+		tareaActual.setParent(parentTask);
+		
+		return;
+		
+	}
 
 }
