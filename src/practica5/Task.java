@@ -34,7 +34,7 @@ public class Task{
     	this.nombre = nom;
     	this.padre = null;
     	this.estimado = new ModifyObserver(10);
-    	this.dedicado= new ModifyObserver(2);
+    	this.dedicado = new ModifyObserver(0);
     	
     	estimado.addObserver(obsEstimado);
     	dedicado.addObserver(obsDedicado);

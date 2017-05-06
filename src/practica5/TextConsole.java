@@ -47,7 +47,7 @@ public class TextConsole{
 		Function fun6 = (h) -> this.list();
 		Function fun7 = (h) -> this.status(h[0]);
 		
-		// Anadir lambdas
+		// Anadir funciones
 		this.addCommands("start", fun1);
 		this.addCommands("stop", fun2);
 		this.addCommands("addEstimate", fun3);
@@ -92,8 +92,14 @@ public class TextConsole{
 					
 				}
 				
-			}else
-				func.execute(comandos[1]);
+			}else{
+				
+				if(comandos.length == 1){
+					func.execute();
+				}else
+					func.execute(comandos[1]);
+			}
+				
 							
 		}
 		
