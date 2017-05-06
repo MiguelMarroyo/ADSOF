@@ -12,7 +12,7 @@ import java.util.HashSet;
 public class Tasks {
  
     private static Tasks Tasks = getInstance();
-    private  HashSet<Task> tareas = new HashSet<Task>();
+    private HashSet<Task> tareas = new HashSet<Task>();
  
     public static Tasks getInstance(){
          
@@ -59,6 +59,16 @@ public class Tasks {
     	
     	return null;
          
+    }
+    
+    /**
+     * Devuelve el conjunto de tareas
+     * @return tareas
+     */
+    public HashSet<Task> getTareas(){
+    	
+    	return tareas;
+    
     }
      
 }

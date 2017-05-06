@@ -27,7 +27,7 @@ public class TesterP3 {
 				
 		consola.run(); // Ejecucion de la consola
 		
-		System.out.println("Fin del tester");
+		System.out.println("Fin del tester 3");
 		
 	}
 	

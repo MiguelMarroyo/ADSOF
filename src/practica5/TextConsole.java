@@ -3,8 +3,10 @@ package practica5;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 /**
  * 
@@ -208,7 +210,12 @@ public class TextConsole{
 	 */
 	private void list(){
 		
+		HashSet<Task> tareas = tareasTotales.getTareas();
 		
+		TreeSet<Task> arbol = new TreeSet<Task>();
+		arbol.addAll(tareas);
+		
+		System.out.println(arbol);
 		
 	}
 	
