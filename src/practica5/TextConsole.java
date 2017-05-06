@@ -42,6 +42,8 @@ public class TextConsole{
 		Function fun3 = (h) -> this.addEstimate(h[0]);
 		Function fun4 = (h) -> this.spend(h[0]);
 		Function fun5 = (h) -> this.parent(this.tareasTotales.buscarTarea(h[0]));
+		Function fun6 = (h) -> this.list();
+		Function fun7 = (h) -> this.status(h[0]);
 		
 		// Anadir lambdas
 		this.addCommands("start", fun1);
@@ -49,7 +51,8 @@ public class TextConsole{
 		this.addCommands("addEstimate", fun3);
 		this.addCommands("spend", fun4);
 		this.addCommands("parent", fun5);
-		
+		this.addCommands("list", fun6);
+		this.addCommands("status", fun7);
 	}
 	
 	/**
@@ -197,6 +200,42 @@ public class TextConsole{
 		tareaActual.setParent(parentTask);
 		
 		return;
+		
+	}
+	
+	/**
+	 * Muestra la lista de tareas existentes (alfabeticamente)
+	 */
+	private void list(){
+		
+		
+		
+	}
+	
+	/**
+	 * Muestra el estado de la tarea taskName o de la actual
+	 * @param taskName Nombre de la tarea
+	 */
+	private void status (String taskName){
+		
+		if(taskName == null){
+			
+			System.out.println("Tarea actual: " + tareaActual.getName());
+			System.out.println("Tarea padre: " + tareaActual.getParent().getName());
+			System.out.println("Tiempo estimado: " + tareaActual.getEstimated());
+			System.out.println("Tiempo dedicado: " + tareaActual.getDedicated());
+			return;
+			
+		}
+		
+		Task tarea = tareasTotales.buscarTarea(taskName);
+		System.out.println("Tarea: " + tarea.getName());
+		System.out.println("Tarea padre: " + tarea.getParent().getName());
+		System.out.println("Tiempo estimado: " + tarea.getEstimated());
+		System.out.println("Tiempo dedicado: " + tarea.getDedicated());
+		
+		return;
+		
 		
 	}
 
