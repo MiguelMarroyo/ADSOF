@@ -1,6 +1,7 @@
 package practica5;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -18,11 +19,30 @@ public class TextConsole{
 	
 	private Map<String, Function> commands;
 	
+	private Task tareaActual;
+	private Tasks tareasTotales;
+	
+	private Date startDate;
+	private Date endDate;
+	
+	private int segundos;
+	
 	/**
 	 * Constructor de la clase TextConsole
 	 */
 	public TextConsole(){
+		
 		this.commands = new HashMap<String, Function>();
+		this.tareasTotales = new Tasks();
+		
+		
+		// Creacion de lambdas
+		Function fun1 = (h) -> this.start(h[0]);
+		
+		
+		// Anadir lambdas
+		this.addCommands("start", fun1);
+		
 	}
 	
 	/**
@@ -79,6 +99,30 @@ public class TextConsole{
 		return;
 		
 	}
+	
+	/**
+	 * Crea e inicia una tarea
+	 * @param taskName Nombre de la tarea
+	 */
+	private void start(String taskName){
+		
+		// Buscamos la tarea (por si ya existe)
+		
+		Task newTask = tareasTotales.buscarTarea(taskName);
+		
+		if (newTask == null){
+			
+			this.tareasTotales.newTask(taskName);
+			
+		}
+		
+		startDate = new Date(); // Iniciamos el contador
+		
+		
+		
+		
+	}
+	
 	
 	
 
