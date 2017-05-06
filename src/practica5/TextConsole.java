@@ -18,10 +18,12 @@ public class TextConsole{
 	
 	private Map<String, Function> commands;
 	
+	/**
+	 * Constructor de la clase TextConsole
+	 */
 	public TextConsole(){
 		this.commands = new HashMap<String, Function>();
 	}
-	
 	
 	/**
 	 * Bucle de la consola
