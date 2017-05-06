@@ -235,18 +235,29 @@ public class TextConsole{
 		if(taskName == null){
 			
 			System.out.println("Tarea actual: " + tareaActual.getName());
-			System.out.println("Tarea padre: " + tareaActual.getParent().getName());
-			System.out.println("Tiempo estimado: " + tareaActual.getEstimated());
-			System.out.println("Tiempo dedicado: " + tareaActual.getDedicated());
+			
+			if(tareaActual.getParent() == null){
+				System.out.println("Tarea padre: Ninguna tarea asignada");
+			}else
+				System.out.println("Tarea padre: " + tareaActual.getParent().getName());
+			
+			System.out.println("Tiempo estimado: " + tareaActual.getEstimated().getValue().toString());
+			System.out.println("Tiempo dedicado: " + tareaActual.getDedicated().getValue().toString());
 			return;
 			
 		}
 		
 		Task tarea = tareasTotales.buscarTarea(taskName);
 		System.out.println("Tarea: " + tarea.getName());
-		System.out.println("Tarea padre: " + tarea.getParent().getName());
-		System.out.println("Tiempo estimado: " + tarea.getEstimated());
-		System.out.println("Tiempo dedicado: " + tarea.getDedicated());
+		
+		if(tarea.getParent() == null){
+			System.out.println("Tarea padre: Ninguna tarea asignada");
+		}else
+			System.out.println("Tarea padre: " + tarea.getParent().getName());
+		
+		
+		System.out.println("Tiempo estimado: " + tarea.getEstimated().getValue().toString());
+		System.out.println("Tiempo dedicado: " + tarea.getDedicated().getValue().toString());
 		
 		return;
 		

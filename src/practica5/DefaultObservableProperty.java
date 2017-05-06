@@ -84,4 +84,9 @@ public abstract class DefaultObservableProperty<V> implements ObservableProperty
 		
 	}
 	
+	@Override
+	public String toString(){
+		return valor.toString();
+	}
+	
 }
