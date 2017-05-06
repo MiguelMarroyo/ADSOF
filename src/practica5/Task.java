@@ -219,5 +219,28 @@ public class Task{
 		
 	}
 	
+	/**
+	 * Set del tiempo estimado
+	 * @param value Valor de tiempo estimado
+	 */
+	public void setEstimado(int value){
+		
+		estimado = new ModifyObserver(value);
+		
+	}
+	
+	
+	/**
+	 * Set del tiempo dedicado
+	 * @param value Valor de tiempo dedicado
+	 */
+	public void setDedicado(int value){
+		
+		dedicado = new ModifyObserver(value);
+		
+		return;
+		
+	}
+	
 
 }

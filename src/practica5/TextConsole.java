@@ -118,6 +118,20 @@ public class TextConsole{
 		
 		startDate = new Date(); // Iniciamos el contador
 		
+		if(tareaActual != null){
+			
+			stop(); // Si ya existe una tarea previa, stop
+			
+		}
+		
+		tareaActual = tareasTotales.buscarTarea(taskName); // Asignamos la tarea creada (o ya existente) como tarea actual
+		
+		
+	}
+	
+	
+	private void stop(){
+		
 		
 		
 		
