@@ -20,7 +20,7 @@ public class TesterP3 {
 		
 		// Creacion de nuevos comandos
 		Function fun1 = (h)-> System.out.println(h[0]);
-		Function fun2 = (h) -> System.out.println("Saludos " + h[0]);
+		Function fun2 = (h) -> System.out.println("Saludos " + h[0]); // h es un array String[] (definido por execute)
 		
 		consola.addCommands("Imprime", fun1);
 		consola.addCommands("Saludos", fun2);
