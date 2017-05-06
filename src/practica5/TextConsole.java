@@ -1,12 +1,13 @@
 package practica5;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeSet;
 
 /**
  * 
@@ -218,10 +219,10 @@ public class TextConsole{
 		
 		HashSet<Task> tareas = tareasTotales.getTareas();
 		
-		TreeSet<Task> arbol = new TreeSet<Task>();
-		arbol.addAll(tareas);
+		List<Task> sortedList = new ArrayList<Task>(tareas);
+		Collections.sort(sortedList);
 		
-		System.out.println(arbol);
+		System.out.println(sortedList);
 		
 	}
 	

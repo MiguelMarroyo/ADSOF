@@ -11,7 +11,7 @@ import java.util.Set;
  *         Angelica L Jimenez Monar angelical.jimenez@estudiante.uam.es
  *
  */
-public class Task{
+public class Task implements Comparable<Task>{
      
     private String nombre;
      
@@ -239,6 +239,20 @@ public class Task{
 		dedicado = new ModifyObserver(value);
 		
 		return;
+		
+	}
+
+	@Override
+	public int compareTo(Task o) {
+		
+		return this.nombre.compareTo(o.nombre);
+		
+	}
+	
+	@Override
+	public String toString(){
+		
+		return nombre;
 		
 	}
 	
