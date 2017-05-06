@@ -102,6 +102,8 @@ public class TextConsole{
 				
 				if(comandos.length == 1){
 					func.execute();
+				}else if (comandos.length > 2){
+					throw new IllegalArgumentException("Numero de argumentos introducidos invalido");
 				}else
 					func.execute(comandos[1]);
 			}
@@ -238,6 +240,11 @@ public class TextConsole{
 	private void status (String taskName){
 		
 		if(taskName == null){
+			
+			
+			if(tareaActual == null){
+				throw new IllegalArgumentException("No hay tareas ejecutandose actualmente");
+			}
 			
 			System.out.println("Tarea actual: " + tareaActual.getName());
 			
